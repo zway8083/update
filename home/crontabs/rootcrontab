@@ -1,1 +1,1 @@
-0 12 * * * sudo /$HOME/updater.sh
+0 12 * * * sudo "$HOME"/main-updater.sh

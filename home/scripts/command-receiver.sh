@@ -7,6 +7,10 @@ if [ -z "$SERVER_ADDRESS" ]; then
     echo "Required environment variable SERVER_ADDRESS: not set or empty"
     exit 1
 fi
+if [ -z "$RASPBERRY_ID" ]; then
+    echo "Required environment variable RASPBERRY_ID: not set or empty"
+    exit 1
+fi
 if [ -z "$SHORT_TIME" ]; then
     echo "Environment variable SHORT_TIME is not set or empty, default is 5s"
     SHORT_TIME="$DEFAULT_SHORT_TIME"
@@ -16,7 +20,7 @@ if [ -z "$LONG_TIME" ]; then
     LONG_TIME="$DEFAULT_LONG_TIME"
 fi
 
-URL="$SERVER_ADDRESS/api/raspberry"
+URL="$SERVER_ADDRESS"'/api/raspberry'
 echo "URL=$URL"
 WAITING_TIME="$LONG_TIME"
 

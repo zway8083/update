@@ -1,2 +1,2 @@
-@daily /$HOME/sys-info.sh >> /home/pi/afg-ericsson.log
-@reboot . /$HOME/.bash_ericsson; /home/pi/command-receiver.sh >> /home/pi/afg-ericsson.log
+@daily . "$HOME"/.bash_afg_ericsson; "$HOME"/sys-info.sh
+@reboot . "$HOME"/.bash_afg_ericsson; "$HOME"/command-receiver.sh
