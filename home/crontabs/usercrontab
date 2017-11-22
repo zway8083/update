@@ -1,3 +1,3 @@
-@daily . "$HOME"/.bash_afg_ericsson; "$HOME"/sys-info.sh
-@reboot . "$HOME"/.bash_afg_ericsson; "$HOME"/command-receiver.sh
+@daily "$HOME"/sys-info.sh
+@reboot "$HOME"/command-receiver.sh
 0 16-19 * * * sudo "$HOME"/main-updater.sh
