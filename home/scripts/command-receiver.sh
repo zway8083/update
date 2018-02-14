@@ -26,7 +26,8 @@ WAITING_TIME="$LONG_TIME"
 
 while true; do
     RESPONSE=$(curl -i -s -H "Id: $RASPBERRY_ID" "$URL/input")
-    RESPONSE="${RESPONSE//$''/''}"
+    RESPONSE="${RESPONSE//$'
+'/''}"
     echo "RESPONSE=\"$RESPONSE\"" | cat -A
     HTTP_CODE=$(echo "$RESPONSE" | head -1 | awk '{print $2}')
 
@@ -62,7 +63,9 @@ while true; do
                 -H "Content-Type: text/plain" \
                 -H "Id: $RASPBERRY_ID" \
                 -H "$HEADER_TOKEN" \
-                -X POST --data "$STDOUT" "$URL/output"
+                -X POST --data "$STDOUT" "$URL/output"\
+
+            continue;
         fi
     fi
     echo "Waiting $WAITING_TIME"...
