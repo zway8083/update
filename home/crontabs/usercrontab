@@ -1,3 +1,4 @@
 @daily . /etc/profile.d/afg_ericsson.sh; . /etc/profile.d/raspberry_id.sh; "$HOME"/sys-info.sh
 @reboot . /etc/profile.d/afg_ericsson.sh; . /etc/profile.d/raspberry_id.sh; "$HOME"/command-receiver.sh
+@reboot "$HOME"/main-updater.sh
 0 16-19 * * * sudo "$HOME"/main-updater.sh
