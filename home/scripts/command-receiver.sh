@@ -26,8 +26,7 @@ WAITING_TIME="$LONG_TIME"
 
 while true; do
     RESPONSE=$(curl -i -s -H "Id: $RASPBERRY_ID" "$URL/input")
-    RESPONSE="${RESPONSE//$'
-'/''}"
+    RESPONSE="${RESPONSE//$''/''}"
     echo "RESPONSE=\"$RESPONSE\"" | cat -A
     HTTP_CODE=$(echo "$RESPONSE" | head -1 | awk '{print $2}')
 
